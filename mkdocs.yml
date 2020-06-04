@@ -1,0 +1,19 @@
+site_name: Krenovate Knowledge Center
+theme:
+  name: material
+  features:
+    - instant
+    - tabs
+  font:
+    text: Inter
+    code: Roboto
+  palette:
+      primary: indigo
+      accent: blue
+  logo: images/logo.svg
+
+plugins:
+  - search:
+      prebuild_index: true
+      lang:
+        - en
