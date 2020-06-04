@@ -5,7 +5,6 @@ nav:
   - PHP: 'php/index.md'
   - JavaScript: 'javascript/index.md'
   - CSS: 'css/index.md'
-  - How
 theme:
   name: material
   features:
