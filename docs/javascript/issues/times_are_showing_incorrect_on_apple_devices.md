@@ -1,6 +1,6 @@
-# Times are showing incorrect on Apple devices.
+# Timer are showing incorrect on Apple devices.
 #### Problem
-It was found that the time was shown incorrectly on certain apple devices for the client. The times were somewhat around `5:30 hours` slow on apple devices.
+It was found that the timer was shown incorrectly on certain apple devices for the client. The times were somewhat around `5:30 hours` slow on apple devices.
 
 #### Solution
 This was identified due to the reason that different browser interpret the time very differently. And usually Apple device users use safari as there default browser time was coming out to be different. 
