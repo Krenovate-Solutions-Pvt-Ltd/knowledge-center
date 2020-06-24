@@ -15,7 +15,7 @@
     
     
       
-        <title>Timer are showing incorrect on Apple devices. - Knowledge Center</title>
+        <title>How to renew expired openlitespeed server on digital ocean - Knowledge Center</title>
       
     
     
@@ -56,11 +56,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#timer-are-showing-incorrect-on-apple-devices" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -84,7 +79,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Timer are showing incorrect on Apple devices.
+              How to renew expired openlitespeed server on digital ocean
             
           </span>
         </div>
@@ -197,7 +192,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../wordpress/" title="WordPress" class="md-nav__link">
+    <a href="../../" title="WordPress" class="md-nav__link">
       WordPress
     </a>
   </li>
@@ -221,7 +216,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../" title="JavaScript" class="md-nav__link">
+    <a href="../../../javascript/" title="JavaScript" class="md-nav__link">
       JavaScript
     </a>
   </li>
@@ -246,45 +241,6 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#problem" class="md-nav__link">
-    Problem
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#solution" class="md-nav__link">
-    Solution
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -294,73 +250,55 @@
                   
                 
                 
-                <h1 id="timer-are-showing-incorrect-on-apple-devices">Timer are showing incorrect on Apple devices.<a class="headerlink" href="#timer-are-showing-incorrect-on-apple-devices" title="Permanent link">&para;</a></h1>
-<h4 id="problem">Problem<a class="headerlink" href="#problem" title="Permanent link">&para;</a></h4>
-<p>It was found that the timer was shown incorrectly on certain apple devices for the client. The times were somewhat around <code>5:30 hours</code> slow on apple devices.</p>
-<h4 id="solution">Solution<a class="headerlink" href="#solution" title="Permanent link">&para;</a></h4>
-<p>This was identified due to the reason that different browser interpret the time very differently. And usually Apple device users use safari as there default browser time was coming out to be different. </p>
-<p>To solve the issue, <a href="https://momentjs.com/" title="Read More">Moment JS</a> was used.</p>
-<ul>
-<li><strong>Step 1</strong> : Use Enqueue script in order to add the moment js file from a cdn.</li>
-</ul>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span> 
-<span class="nx">wp_enqueue_script</span><span class="p">(</span> <span class="s1">&#39;momentjs&#39;</span> <span class="p">,</span> <span class="s1">&#39;https://cdn.jsdelivr.net/npm/moment@2.25.3/min/moment.min.js&#39;</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
-<span class="cp">?&gt;</span><span class="x"></span>
+                  <h1>How to renew expired openlitespeed server on digital ocean</h1>
+                
+                <p>Stop the web server</p>
+<p><div class="highlight"><pre><span></span><code>root@webserver:~# service lsws stop
 </code></pre></div>
-</td></tr></table>
-
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p><code>wp_enqueue_script</code> is the wordpress core function used to call the script on the frontend of the website. You can read about it in <a href="https://developer.wordpress.org/reference/functions/wp_enqueue_script/">wordpress core documentation here</a>. </p>
-</div>
-<ul>
-<li>Step 2 : Using the moment object ensures that the time is correct on all the devices.</li>
-</ul>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">// Store the value of time</span>
-<span class="kd">var</span> <span class="nx">cardTime</span> <span class="o">=</span> <span class="nx">div</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#time&quot;</span><span class="p">).</span><span class="nx">innerHTML</span><span class="p">;</span>
-
-<span class="c1">// Use moment obejct to parse the time      </span>
-<span class="kd">var</span> <span class="nx">eventTime</span><span class="o">=</span> <span class="nx">moment</span><span class="p">(</span><span class="nx">cardTime</span><span class="p">);</span> 
-
-<span class="c1">// On Every Second   </span>
-<span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-
-<span class="c1">// Get the current time</span>
-<span class="kd">var</span> <span class="nx">now</span> <span class="o">=</span> <span class="nx">moment</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">(),</span> <span class="s1">&#39;YYYY-MM-DD HH:mm&#39;</span><span class="p">);</span> 
-
-<span class="c1">// Use  duration to get the tine difference.</span>
-<span class="kd">var</span> <span class="nx">duration</span> <span class="o">=</span> <span class="nx">moment</span><span class="p">.</span><span class="nx">duration</span><span class="p">(</span><span class="nx">eventTime</span><span class="p">.</span><span class="nx">diff</span><span class="p">(</span><span class="nx">now</span><span class="p">));</span>
-
-<span class="c1">// Get difference in day, hours, minutes and seconds</span>
-<span class="kd">var</span> <span class="nx">days</span> <span class="o">=</span> <span class="nx">duration</span><span class="p">.</span><span class="nx">_data</span><span class="p">.</span><span class="nx">days</span><span class="p">;</span>
-<span class="kd">var</span> <span class="nx">hours</span> <span class="o">=</span> <span class="nx">duration</span><span class="p">.</span><span class="nx">_data</span><span class="p">.</span><span class="nx">hours</span><span class="p">;</span>
-<span class="kd">var</span> <span class="nx">minutes</span> <span class="o">=</span> <span class="nx">duration</span><span class="p">.</span><span class="nx">_data</span><span class="p">.</span><span class="nx">minutes</span><span class="p">;</span>
-<span class="kd">var</span> <span class="nx">seconds</span> <span class="o">=</span> <span class="nx">duration</span><span class="p">.</span><span class="nx">_data</span><span class="p">.</span><span class="nx">seconds</span><span class="p">;</span>
-<span class="p">},</span><span class="mi">1000</span> <span class="p">);</span>
+Run certbot to issue another certificate</p>
+<p><div class="highlight"><pre><span></span><code>root@webserver:~# certbot certonly
 </code></pre></div>
-</td></tr></table>
+<div class="highlight"><pre><span></span><code>Choose the method you want to authenticate your domain ownership with the ACME CA. I chose option 1 &quot;Spin up a temporary webserver (standalone)&quot; which is the reason that we stopped the webserver in the first instance as we cannot have two webservers trying to use the same port (s) at the same time.
+
+How would you like to authenticate with the ACME CA?
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+1: Spin up a temporary webserver (standalone)
+2: Place files in webroot directory (webroot)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Select the appropriate number [1-2] then [enter] (press &#39;c&#39; to cancel): 1
+
+Now type in the domain name(s) that you need the certificate to be issued for
+
+Please enter in your domain name(s) (comma and/or space separated)  (Enter &#39;c&#39;
+to cancel): example.com
+
+Certbot will go through and do it&#39;s stuff and create the certificate(s) that you need and it will tell you where it has placed the certificate files.
+
+Cert is due for renewal, auto-renewing...
+Renewing an existing certificate
+Performing the following challenges:
+http-01 challenge for example.com
+Waiting for verification...
+Cleaning up challenges
+
+IMPORTANT NOTES:
+ - Congratulations! Your certificate and chain have been saved at:
+   /etc/letsencrypt/live/example.com/fullchain.pem
+   Your key file has been saved at:
+   /etc/letsencrypt/live/example.com/privkey.pem
+   Your cert will expire on 2019-XX-XX. To obtain a new or tweaked
+   version of this certificate in the future, simply run certbot
+   again. To non-interactively renew *all* of your certificates, run
+   &quot;certbot renew&quot;
+ - If you like Certbot, please consider supporting our work by:
+
+   Donating to ISRG / Let&#39;s Encrypt:   https://letsencrypt.org/donate
+   Donating to EFF:                    https://eff.org/donate-le
+
+Once the certs have been obtained we are going to start up OpenLiteSpeed again
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code>root@webserver:~# service lsws start
+</code></pre></div>
                 
                   
                     
@@ -369,7 +307,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: June 6, 2020
+      Last update: June 24, 2020
     
   </small>
 </div>
